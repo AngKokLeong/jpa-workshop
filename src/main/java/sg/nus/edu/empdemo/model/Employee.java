@@ -45,7 +45,7 @@ public class Employee {
     //}
 
     @OneToMany(
-        mappedBy = "employees",
+        mappedBy = "employee",
         cascade = {
             CascadeType.ALL
         },
@@ -55,8 +55,8 @@ public class Employee {
     private List<Course> courses = new ArrayList<Course>();
     
     //public void addCourse(Course course){
-    //    course.getEmployees().add(this);
-    //    this.courses.add(course);
+        //course.setEmployee(this);
+      //  this.courses.add(course);
     //}
 
     @ManyToMany(

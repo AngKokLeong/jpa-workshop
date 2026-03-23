@@ -3,7 +3,6 @@ package sg.nus.edu.empdemo.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import sg.nus.edu.empdemo.model.Course;
 import java.time.LocalDate;
@@ -19,13 +18,13 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     public List<Course> findByStartsGreaterThan(LocalDate starts);
 
     //Find courses by maximum duration
-    public List<Course> findBydurationInMonthsOrderByDesc();
+    //public List<Course> findBydurationInMonthsOrderByDesc();
 
     //Find courses by employeeId
     public List<Course> findByEmployeesEquals(Long id);
 
     //Fetch a course and its associated Employee in a single query by the Course ID 
-    public Course findByIdWithEmployee(Long courseId);
+    //public Course findByIdWithEmployee(Long courseId);
 
     // Find courses by employeeId that start after a specific date
     //@Query("select u.employees from courses where u.starts = ?1")

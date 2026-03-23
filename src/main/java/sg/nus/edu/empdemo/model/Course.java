@@ -41,4 +41,10 @@ public class Course {
     )
     private List<Employee> employees = new ArrayList<Employee>();
     
+
+
+    public String getName(){
+        return this.name;
+    }
+
 }

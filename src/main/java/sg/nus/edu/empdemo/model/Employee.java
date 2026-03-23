@@ -39,10 +39,10 @@ public class Employee {
     private Department department;
 
     //https://docs.hibernate.org/orm/7.3/userguide/html_single/#associations-one-to-one-bidirectional-lazy
-    public void assignDepartment(Department dept){
-        this.department = dept;
-        this.department.getEmployee().setDepartment(dept);
-    }
+   // public void assignDepartment(Department dept){
+    //    dept.setEmployee(this);
+    //    this.department = dept;
+    //}
 
     @OneToMany(
         mappedBy = "employees",
@@ -54,10 +54,10 @@ public class Employee {
     )
     private List<Course> courses = new ArrayList<Course>();
     
-    public void addCourse(Course course){
-        course.getEmployees().add(this);
-        this.courses.add(course);
-    }
+    //public void addCourse(Course course){
+    //    course.getEmployees().add(this);
+    //    this.courses.add(course);
+    //}
 
     @ManyToMany(
         fetch = FetchType.LAZY,
@@ -67,15 +67,15 @@ public class Employee {
         }
     )
     @JoinTable(
-        name="employee_projects",
+        name="employees_projects",
         joinColumns = @JoinColumn(name="employee_id"),
         inverseJoinColumns = @JoinColumn(name="project_id")
     )
     private Set<Project> projects = new HashSet<Project>();
 
-    public void addProject(Project project){
-        project.getEmployees().add(this);
-        this.projects.add(project);
-    }
+    //public void addProject(Project project){
+     //   project.getEmployees().add(this);
+     //   this.projects.add(project);
+    //}
 
 }

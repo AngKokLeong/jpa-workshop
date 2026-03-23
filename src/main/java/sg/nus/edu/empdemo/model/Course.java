@@ -37,9 +37,9 @@ public class Course {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(
         name="employee_id",
-        nullable=false
+        referencedColumnName="id"
     )
-    private List<Employee> employees = new ArrayList<Employee>();
+    private Employee employee;
     
 
 

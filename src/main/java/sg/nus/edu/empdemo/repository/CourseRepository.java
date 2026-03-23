@@ -1,6 +1,7 @@
 package sg.nus.edu.empdemo.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -21,7 +22,7 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     //public List<Course> findBydurationInMonthsOrderByDesc();
 
     //Find courses by employeeId
-    public List<Course> findByEmployeesEquals(Long id);
+    public Optional<Course> findByEmployeeEquals(Long id);
 
     //Fetch a course and its associated Employee in a single query by the Course ID 
     //public Course findByIdWithEmployee(Long courseId);
